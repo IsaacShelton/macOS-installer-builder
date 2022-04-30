@@ -1,0 +1,10 @@
+
+Python macOS installer generator based off `https://github.com/KosalaHerath/macos-installer-builder`.
+
+Original project copyright (2019) Kosala Herath.
+
+Changes include:
+- Restructuring directories for input/output/temporary
+- Now written mostly in python (some shell calls are still made when more practical)
+- Banner is now transparent with nothing on it by default
+- Application and installation scripts modified for different program

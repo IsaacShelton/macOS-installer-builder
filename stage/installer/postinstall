@@ -1,0 +1,25 @@
+#!/bin/bash
+
+#Custermize this for your application
+APPLICATION_FILE_PATH=adept
+
+#Parameters
+PRODUCT_HOME=/Library/__PRODUCT__/__VERSION__
+
+echo "Post installation process started"
+
+#Change permissions in home directory
+echo "Change permissions in product home"
+cd ${PRODUCT_HOME}
+chmod -R 755 .
+[ -d /usr/local/bin ] || mkdir /usr/local/bin
+
+# Give permissions to everyone to change 'adept.config'
+chmod a+w /Library/Adept/2.6.0/adept.config
+
+#Add application shortcut to /usr/local/bin
+rm -f /usr/local/bin/adept2-6
+rm -f /usr/local/bin/adept
+ln -s ${PRODUCT_HOME}/${APPLICATION_FILE_PATH} /usr/local/bin/adept2-6
+ln -s ${PRODUCT_HOME}/${APPLICATION_FILE_PATH} /usr/local/bin/adept
+echo "Post installation process finished"
