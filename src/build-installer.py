@@ -7,11 +7,6 @@ from os.path import join, dirname
 import shutil
 import subprocess
 
-from pkg_resources import Distribution
-
-def is_numeric_version(version):
-    return True
-
 if len(sys.argv) < 3:
     print("\nUSAGE: src/build-installer.py AppName 1.0.0\n")
     exit(1)
