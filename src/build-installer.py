@@ -96,7 +96,7 @@ def emplace_files():
     os.makedirs(darwinpkg_dir, exist_ok=True)
 
     os.makedirs(installation_dir, exist_ok=True)
-    subprocess.call(['cp', '-a', join(stage_dir, "application"), installation_dir])
+    subprocess.call(['cp', '-a', join(stage_dir, "application/."), installation_dir])
     subprocess.call(['chmod', '-R', '755', installation_dir])
 
     os.makedirs(package_dir, exist_ok=True)
